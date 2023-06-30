@@ -1,10 +1,18 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
 header {
   background-color: #562b81;
 }
 
-.hidden {
+/* .hidden {
   display: none !important;
-}
+} */
 
 .invisible {
   visibility: hidden;

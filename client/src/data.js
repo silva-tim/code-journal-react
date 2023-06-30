@@ -1,7 +1,3 @@
-import './App.css';
-import NavBar from './NavBar';
-import NewEntry from './NewEntry';
-
 let data = {
   view: 'entry-form',
   entries: [],
@@ -18,14 +14,3 @@ const localData = JSON.parse(localStorage.getItem('code-journal-data'));
 if (localData) {
   data = localData;
 }
-
-function App({ data }) {
-  return (
-    <div>
-      <NavBar />
-      <NewEntry data={data} />
-    </div>
-  );
-}
-
-export default App;
