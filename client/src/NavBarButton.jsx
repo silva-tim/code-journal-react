@@ -1,7 +1,7 @@
-export default function NavBarButton({ name }) {
+export default function NavBarButton({ name, onSwap }) {
   return (
     <h3>
-      <a href="#" className="white-text entries-link">
+      <a onClick={onSwap} href="#" className="white-text entries-link">
         {name}
       </a>
     </h3>

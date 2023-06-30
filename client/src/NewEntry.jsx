@@ -3,7 +3,7 @@ import TextArea from './TextArea';
 import Button from './Button';
 import Input from './Input';
 
-export default function NewEntry({ data }) {
+export default function NewEntry({ data, visible }) {
   function handleSubmit(event) {
     event.preventDefault();
     const formValues = {
@@ -15,18 +15,18 @@ export default function NewEntry({ data }) {
   }
 
   return (
-    <div className="container hidden" data-view="entry-form">
+    <div className={`container ${visible}`} data-view="entry-form">
       <div className="row">
         <div className="column-full d-flex justify-between">
           <h1 id="formH1">New Entry</h1>
         </div>
-        <form id="entryForm">
+        <form id="entryForm" onSubmit={handleSubmit}>
           <div className="row margin-bottom-1">
             <Picture />
             <Input />
           </div>
           <TextArea />
-          <Button onClick={handleSubmit} data={data} />
+          <Button data={data} />
         </form>
       </div>
     </div>

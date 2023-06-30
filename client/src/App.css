@@ -10,9 +10,9 @@ header {
   background-color: #562b81;
 }
 
-/* .hidden {
+.hidden {
   display: none !important;
-} */
+}
 
 .invisible {
   visibility: hidden;

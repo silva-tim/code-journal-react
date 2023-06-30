@@ -1,6 +1,8 @@
 import './App.css';
 import NavBar from './NavBar';
 import NewEntry from './NewEntry';
+import Entries from './Entries';
+import { useState } from 'react';
 
 let data = {
   view: 'entry-form',
@@ -19,11 +21,26 @@ if (localData) {
   data = localData;
 }
 
-function App({ data }) {
+function App() {
+  const [visible, setVisible] = useState('hidden');
+
+  function handleSwap() {
+    setVisible('hidden');
+  }
+
+  function handleNew() {
+    setVisible('shown');
+  }
+
   return (
     <div>
-      <NavBar />
-      <NewEntry data={data} />
+      <NavBar onSwap={handleSwap} />
+      <NewEntry visible={visible} data={data} />
+      <Entries
+        entryList={data.entries}
+        visible={visible === 'hidden' ? 'shown' : 'hidden'}
+        onNew={handleNew}
+      />
     </div>
   );
 }
