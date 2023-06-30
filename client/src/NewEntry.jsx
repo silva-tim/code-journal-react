@@ -11,7 +11,10 @@ export default function NewEntry({ data, visible }) {
       photoUrl: event.target.elements.formURL.value,
       notes: event.target.elements.formNotes.value,
     };
-    data.entries.unshift(formValues);
+    if (data.editing === null) {
+      formValues.entryId = data.nextEntryId++;
+      data.entries.unshift(formValues);
+    }
   }
 
   return (

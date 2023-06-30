@@ -3,8 +3,7 @@ import Entry from './Entry';
 export default function Entries({ visible, onNew, entryList }) {
   const entryElements = [];
   for (let i = 0; i < entryList.length; i++) {
-    console.log('hi');
-    entryElements.push(<Entry entry={entryList[i]} />);
+    entryElements.push(<Entry key={i} entry={entryList[i]} />);
   }
 
   return (
